@@ -29,12 +29,11 @@ public class TaskListCommunicationThreadHandler implements Runnable {
                 Gson gson = new Gson();
                 String fromClient = in.readUTF();
                 Package clientMessage = gson.fromJson(fromClient,Package.class);
-                Task task = operation(clientMessage).getTask();
-                if (task.getText().equals(Package.EXIT))
+                Package taskPackage = operation(clientMessage);
+                if (taskPackage.getText().equals(Package.EXIT))
                     break;
-                taskList.add(task);
                 gson = new Gson();
-                String replyJson = gson.toJson(task);
+                String replyJson = gson.toJson(taskPackage);
                 out.writeUTF(replyJson);
             }
         }
@@ -45,12 +44,15 @@ public class TaskListCommunicationThreadHandler implements Runnable {
     }
     private Package operation(Package request) {
         switch (request.getText()) {
-            case "ADD" :
-                return new Package(Package.ADD,request.getTask());
+            case "ADD" : {
+                Package toAdd = new Package(Package.ADD, request.getTask());
+                taskList.add(toAdd.getTask());
+                return toAdd;
+            }
             case "GET":{
                 if(taskList.size() == 0)
                     return new Package("NO TASKS - EMPTY TASK LIST");
-                return new Package(Package.GET);
+                return new Package(Package.GET,taskList.getAndRemoveNextTask());
             }
             case "SIZE":
                 return new Package(Package.SIZE+"= "+taskList.size());

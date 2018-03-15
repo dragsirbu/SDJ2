@@ -54,7 +54,7 @@ public class TaskListClient {
             String serverReply = in.readUTF();
             gson = new Gson();
             Package serverPackage = gson.fromJson(serverReply,Package.class);
-            System.out.println(serverPackage.toString()+"dafuq");
+            System.out.println("Server> "+serverPackage.toString());
 
 
         }

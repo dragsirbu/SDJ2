@@ -28,6 +28,6 @@ public class Package
         if (task == null)
             return "" + text;
         else
-            return text + " " + task;
+            return text + " " + task.toString();
     }
 }
