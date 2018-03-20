@@ -24,12 +24,14 @@ public class TaskListController {
         switch (choice) {
             case 1: {
                 String taskName = view.get("Enter task: ");
-                String timeString = view.get("Enter time: ").trim();
-                System.out.println(timeString);
+//                System.out.println(taskName);
+//                scan.nextLine();
+                String timeString = view.get("Enter time: ");
                 long time = Long.parseLong(timeString);
-                model.add(new Task(taskName,time));
-                System.out.print("Task added: ");
-                view.show(taskName);
+                Task newTask = new Task(taskName,time);
+                model.add(newTask);
+//                System.out.print("Task added: "+taskName);
+                view.show("Task added: "+newTask.toString());
                 break;
             }
             case 2: {
@@ -37,7 +39,7 @@ public class TaskListController {
                 break;
             }
             case 3: {
-                view.show(model.size()+"");
+                view.show("Size: "+model.size());
                 break;
             }
             case 0: {

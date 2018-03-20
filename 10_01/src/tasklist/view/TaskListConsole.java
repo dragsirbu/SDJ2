@@ -32,6 +32,7 @@ public class TaskListConsole implements TaskListView, Runnable {
             System.out.println("0) Type 0 to \"EXIT\"");
             System.out.print("Enter choice: ");
             choice = input.nextInt();
+            input.nextLine();
             if (choice == 0)
                 break;
             this.controller.execute(choice);
@@ -40,9 +41,10 @@ public class TaskListConsole implements TaskListView, Runnable {
 
     @Override
     public String get(String string) {
-        System.out.println(string);
-        String message = input.nextLine();
-        return message;
+        System.out.print(string);
+//        String message = input.nextLine();
+//        System.out.println(message);
+        return input.nextLine();
     }
 
     @Override
