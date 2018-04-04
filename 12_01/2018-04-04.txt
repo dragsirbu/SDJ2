@@ -1,0 +1,4 @@
+04/04/2018 17:59:50 removing a cd has been pressed
+04/04/2018 17:59:50 title for cd to remove has been entered
+04/04/2018 17:59:50 cd has been found in the database
+04/04/2018 17:59:50 cd removed
