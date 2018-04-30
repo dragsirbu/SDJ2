@@ -24,7 +24,7 @@ public class TaskListClient {
         int choice;
         Package clientPackage = new Package(Package.EXIT);
         while(true) {
-            System.out.println("Conected to server: localhost at port 4556");
+//            System.out.println("Conected to server: localhost at port 4556");
             System.out.println("1) Type 1 for \"ADD\"");
             System.out.println("2) Type 2 to \"GET\"");
             System.out.println("3) Type 3 to get the \"SIZE\"");
