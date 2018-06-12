@@ -2,10 +2,17 @@ import java.util.ArrayList;
 public class TaskList
 {
     private GenQueue<Task> tasks;
+    private static TaskList instance;
 
-    public TaskList()
+    private TaskList()
     {
         tasks = new GenQueue<>();
+    }
+
+    public static TaskList getInstance() {
+        if (instance == null)
+            instance = new TaskList();
+        return instance;
     }
     public synchronized void add(Task task)
     {

@@ -12,7 +12,7 @@ public class Log {
         logList = new GenQueue<>();
         date = new DateTime();
         logFile = new File("C:\\Java\\12_01\\"+date.getSortableDate()+".txt");
-    };
+    }
 
     public static Log getInstance() {
         if (instance == null) {

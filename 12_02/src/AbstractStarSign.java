@@ -53,4 +53,5 @@ public abstract class AbstractStarSign {
     {
         return getName() + " (" + interval + ")";
     }
+
 }

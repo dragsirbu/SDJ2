@@ -2,9 +2,9 @@ public class ServerMain {
 
     public static void main(String[] args) {
 
-        final int PORT = 4556;
+        final int PORT = 6789;
 
-        TaskList taskList = new TaskList();
+        TaskList taskList = TaskList.getInstance();
         System.out.println("Server waiting for client...");
         try {
             TaskListServer server = new TaskListServer(taskList,PORT);

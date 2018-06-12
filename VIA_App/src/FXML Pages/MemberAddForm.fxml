@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="addForm" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="600.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MemberAddFormController">
+  <children>
+    <HBox layoutX="0.0" layoutY="0.0" maxHeight="400.0" prefHeight="500.0" prefWidth="600.0">
+      <children>
+        <VBox alignment="TOP_RIGHT" maxHeight="400.0" prefHeight="500.0" prefWidth="200.0">
+          <children>
+            <Label text="Name">
+              <font>
+                <Font size="20.0" fx:id="x1" />
+              </font>
+              <VBox.margin>
+                <Insets top="40.0" fx:id="x2" />
+              </VBox.margin>
+            </Label>
+            <Label font="$x1" text="Address" VBox.margin="$x2" />
+            <Label font="$x1" text="Phone number" VBox.margin="$x2" />
+            <Label font="$x1" text="Email" VBox.margin="$x2" />
+            <Label font="$x1" text="Birthdate" VBox.margin="$x2" />
+          </children>
+        </VBox>
+        <VBox alignment="TOP_CENTER" maxHeight="400.0" prefHeight="400.0" prefWidth="400.0">
+          <children>
+            <TextField fx:id="nameField" maxWidth="250.0" prefHeight="27.0" prefWidth="50.0">
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin></TextField>
+            <TextField fx:id="addressField" maxWidth="250.0" prefHeight="27.0" prefWidth="300.0" VBox.margin="$x2" />
+            <TextField fx:id="phoneField" maxWidth="250.0" prefHeight="27.0" prefWidth="300.0" VBox.margin="$x2" />
+            <TextField fx:id="emailField" maxWidth="250.0" prefHeight="27.0" prefWidth="250.0">
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin></TextField>
+                  <DatePicker fx:id="dateField" maxWidth="250.0" prefWidth="250.0">
+                     <VBox.margin>
+                        <Insets top="37.0" />
+                     </VBox.margin>
+                  </DatePicker>
+          </children>
+        </VBox>
+      </children>
+    </HBox>
+      <HBox alignment="CENTER" layoutY="400.0" prefHeight="100.0" prefWidth="600.0">
+         <children>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelProcess" prefHeight="30.0" prefWidth="100.0" text="Cancel">
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="confirmButton" mnemonicParsing="false" onAction="#confirmButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Confirm">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+  </children>
+</AnchorPane>

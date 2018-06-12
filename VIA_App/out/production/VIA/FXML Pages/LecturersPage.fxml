@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.lang.String?>
+<?import java.net.*?>
+<?import java.net.URL?>
+<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="lecturersPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.LecturersPageController">
+  <children>
+    <VBox alignment="TOP_LEFT" prefHeight="900.0" prefWidth="300.0">
+      <children>
+        <Button fx:id="backButton" cancelButton="true" mnemonicParsing="false" onAction="#goBack" prefWidth="91.0" text="Back">
+          <VBox.margin>
+            <Insets top="10.0" />
+          </VBox.margin>
+        </Button>
+        <HBox alignment="TOP_LEFT" prefHeight="30.0" prefWidth="300.0">
+          <children>
+            <TextField fx:id="searchField" prefHeight="29.999900000002526" prefWidth="254.0" promptText="Search lecturers">
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </TextField>
+          </children>
+          <VBox.margin>
+            <Insets top="100.0" fx:id="x2" />
+          </VBox.margin>
+        </HBox>
+        <ComboBox maxWidth="254.0" prefHeight="30.0" prefWidth="254.0" promptText="All Categories">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <VBox.margin>
+            <Insets top="30.0" fx:id="x1" />
+          </VBox.margin>
+        </ComboBox>
+        <Button mnemonicParsing="false" onAction="#detailsButtonPressed" prefHeight="31.0" prefWidth="254.00009999999747" text="View details">
+          <VBox.margin>
+            <Insets top="30.0" fx:id="x1" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="31.0" prefWidth="254.0" text="Add a new lecturer">
+          <VBox.margin>
+            <Insets top="30.0" fx:id="x1" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonPressed" prefWidth="253.9998779296875" text="Remove lecturer" visible="false">
+          <VBox.margin>
+            <Insets top="30.0" fx:id="x1" />
+          </VBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets left="20.0" />
+      </padding>
+    </VBox>
+    <Separator layoutX="297.0" orientation="VERTICAL" prefHeight="900.0" />
+    <TableView fx:id="lecturersTable" layoutX="297.0" onMouseClicked="#removeButtonAppear" prefHeight="900.0" prefWidth="905.0">
+      <columns>
+        <TableColumn onEditCommit="#changeNameEvent" prefWidth="180.0" text="Name" fx:id="nameColumn" />
+        <TableColumn prefWidth="180.0" text="Birthdate" fx:id="birthdateColumn" />
+        <TableColumn onEditCommit="#changeCategoryEvent" prefWidth="180.0" text="Category" fx:id="categoryColumn" />
+        <TableColumn onEditCommit="#changePhoneEvent" prefWidth="180.0" text="Phone" fx:id="phoneColumn" />
+        <TableColumn onEditCommit="#changeEmailEvent" prefWidth="184.0" text="Email" fx:id="emailColumn" />
+      </columns>
+    </TableView>
+  </children>
+  <stylesheets>
+    <URL value="@../CSS/LecturersPage.css" />
+  </stylesheets>
+</AnchorPane>

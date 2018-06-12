@@ -1,0 +1,16 @@
+#searchButton {
+    -fx-graphic: url("../Icons/searchIcon.png");
+}
+#addButton {
+    -fx-graphic: url("../Icons/plusIcon.png");
+}
+.button {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+#backButton {
+    -fx-graphic: url("../Icons/backIcon.png");
+}
+#removeButton {
+     -fx-graphic: url("../Icons/removeIcon.png");
+ }

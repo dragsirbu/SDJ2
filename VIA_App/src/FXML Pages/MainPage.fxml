@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPageController">
+   <children>
+      <AnchorPane layoutX="-3.0" layoutY="-15.0" prefHeight="900.0" prefWidth="400.0">
+         <children>
+            <VBox layoutX="4.0" layoutY="245.0" prefHeight="675.0" prefWidth="401.0">
+               <children>
+                  <Hyperlink fx:id="eventsButton" accessibleRole="BUTTON" alignment="CENTER" onAction="#eventsHandler" pickOnBounds="false" prefWidth="400.0" style="-fx-text-fill: #111; -fx-border-color: transparent;" text="Events">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="membersButton" accessibleRole="BUTTON" alignment="CENTER" onAction="#membersHandler" prefWidth="400.0" style="-fx-text-fill: #111; -fx-border-color: transparent;" text="Members">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="lecturersButton" accessibleRole="BUTTON" alignment="CENTER" onAction="#lecturersHandler" prefWidth="400.0" style="-fx-text-fill: #111; -fx-border-color: transparent;" text="Lecturers">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                  </Hyperlink>
+                  <Hyperlink fx:id="sponsorsButton" accessibleRole="BUTTON" alignment="CENTER" onAction="#sponsorsHandler" pickOnBounds="false" prefWidth="400.0" style="-fx-text-fill: #111; -fx-border-color: transparent;" text="Sponsors">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <padding>
+                        <Insets left="15.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                  </Hyperlink>
+               </children>
+            </VBox>
+            <Separator layoutX="6.0" layoutY="240.0" prefHeight="10.0" prefWidth="400.0" />
+            <AnchorPane layoutX="5.0" layoutY="14.0" prefHeight="225.0" prefWidth="400.0">
+               <children>
+                  <Label layoutX="94.0" layoutY="83.0" text="Just Bob">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#b5e464" layoutX="303.0" layoutY="113.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label alignment="CENTER" layoutX="90.0" layoutY="113.0" prefHeight="26.0" prefWidth="84.0" style="-fx-font-style: italic;" text="President">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="403.0" layoutY="14.0" orientation="VERTICAL" prefHeight="900.0" />
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_CENTER" layoutX="407.0" prefHeight="900.0" prefWidth="800.0">
+         <children>
+            <Label alignment="CENTER" maxWidth="600.0" prefHeight="150.0" style="-fx-font-style: italic;" text="Upcoming Events">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Group>
+               <children>
+                  <HBox layoutX="4.0" layoutY="51.0" prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#025e0e" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Rectangle>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="400.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label text="Some Nice Event">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="11/01/18">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Presented by:  Some Lecturer">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </Group>
+            <Group>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#428a55" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Rectangle>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="400.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label text="Some Decent Event">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="15/02/18">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Presented by:  Some Lecturer">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </Group>
+            <Group>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#75bc85" height="100.0" stroke="BLACK" strokeType="INSIDE" width="100.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </Rectangle>
+                        <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="400.0">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <children>
+                              <Label text="Some Boring Event">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label text="17/03/18">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Presented by:  Some Lecturer">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </Group>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

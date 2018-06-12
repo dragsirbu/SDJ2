@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="membersPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.MembersPageController">
+  <children>
+    <VBox alignment="TOP_LEFT" prefHeight="900.0" prefWidth="300.0">
+      <children>
+        <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" text="Back">
+          <VBox.margin>
+            <Insets top="10.0" />
+          </VBox.margin>
+        </Button>
+        <HBox alignment="TOP_LEFT" prefHeight="30.0" prefWidth="300.0">
+          <children>
+            <TextField fx:id="searchField" alignment="CENTER_LEFT"  prefHeight="32.0" prefWidth="255.0" promptText="Search members" />
+          </children>
+          <VBox.margin>
+            <Insets top="100.0" />
+          </VBox.margin>
+        </HBox>
+        <Button id="addButton" fx:id="addNewMemberButton" mnemonicParsing="false" onAction="#addNewMemberButtonPressed" prefHeight="31.000099999997474" prefWidth="255.0" text="Add a new member">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+        <Button mnemonicParsing="false" onAction="#detailsButtonPressed" prefHeight="30.0" prefWidth="255.0" text="View details">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonPressed" prefWidth="255.0" text="Remove member" visible="false">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets left="20.0" />
+      </padding>
+    </VBox>
+    <TableView fx:id="membersTable" layoutX="300.0" onMouseClicked="#removeButtonAppear" prefHeight="900.0" prefWidth="900.0">
+      <columns>
+        <TableColumn onEditCommit="#changeNameEvent" prefWidth="190.0" text="Name" fx:id="nameColumn" />
+        <TableColumn prefWidth="120.0" text="Birthdate" fx:id="birthdateColumn" />
+        <TableColumn onEditCommit="#changeAddressEvent" prefWidth="180.0" text="Adress" fx:id="addressColumn" />
+        <TableColumn onEditCommit="#changePhoneEvent" prefWidth="160.0" text="Phone" fx:id="phoneColumn" />
+        <TableColumn onEditCommit="#changeEmailEvent" prefWidth="250.0" text="Email" fx:id="emailColumn" />
+      </columns>
+    </TableView>
+  </children>
+  <stylesheets>
+    <URL value="@../CSS/MembersPage.css" />
+  </stylesheets>
+</AnchorPane>

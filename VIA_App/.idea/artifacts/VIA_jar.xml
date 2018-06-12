@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VIA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VIA_jar</output-path>
+    <root id="archive" name="VIA.jar">
+      <element id="module-output" name="VIA" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="eventsPanel" maxHeight="900.0" maxWidth="1200.0" minHeight="900.0" minWidth="1200.0" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EventsPageController">
+  <children>
+    <VBox maxHeight="900.0" maxWidth="300.0" minHeight="900.0" minWidth="300.0" prefHeight="900.0" prefWidth="300.0">
+      <children>
+        <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefWidth="98.0" text="Back">
+          <VBox.margin>
+            <Insets />
+          </VBox.margin>
+        </Button>
+        <TextField fx:id="searchField" maxHeight="30.0" maxWidth="266.0" minHeight="30.0" minWidth="180.0" prefHeight="30.0" prefWidth="266.0" promptText="Search events">
+          <VBox.margin>
+            <Insets top="100.0" />
+          </VBox.margin>
+        </TextField>
+        <ComboBox fx:id="categoriesBox" prefHeight="26.999908447265625" prefWidth="266.0" promptText="All categories" style="">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </ComboBox>
+        <Button mnemonicParsing="false" onAction="#detailsButtonPressed" prefHeight="31.0" prefWidth="266.0" text="Event details">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="addEventButton" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="30.0" prefWidth="266.0" text="Add a new event">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="addParticipantButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="266.0" text="Add participant to event" visible="false">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+        <Button fx:id="removeEventButton" mnemonicParsing="false" prefWidth="266.0" text="Remove event" visible="false">
+          <VBox.margin>
+            <Insets top="30.0" />
+          </VBox.margin>
+        </Button>
+      </children>
+      <padding>
+        <Insets left="20.0" top="20.0" />
+      </padding>
+    </VBox>
+    <TableView fx:id="eventsTable" maxHeight="900.0" maxWidth="900.0" minHeight="900.0" minWidth="900.0" onMouseClicked="#ButtonsAppear" prefHeight="900.0" prefWidth="900.0">
+      <columns>
+        <TableColumn fx:id="nameColumn" prefWidth="320.0" text="Name" />
+        <TableColumn fx:id="typeColumn" prefWidth="170.0" text="Event type" />
+        <TableColumn fx:id="dateColumn" prefWidth="150.0" text="Date" />
+        <TableColumn fx:id="placesColumn" prefWidth="160.0" text="Available places" />
+        <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price" />
+      </columns>
+    </TableView>
+  </children>
+  <stylesheets>
+    <URL value="@../CSS/EventsPage.css" />
+  </stylesheets>
+</HBox>

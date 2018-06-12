@@ -7,21 +7,25 @@ public class TaskListServer {
     private ServerSocket welcomeSocket;
     private TaskList taskList;
 
-    public TaskListServer(TaskList taskList, int port) throws IOException {
+    public TaskListServer(TaskList taskList,int port) {
         this.taskList = taskList;
-        this.welcomeSocket = new ServerSocket(port);
-    }
-    public void execute() {
-        try{
-            while (true) {
-                Socket clientSocket = welcomeSocket.accept();
-                Thread clientThread =
-                        new Thread(new TaskListCommunicationThreadHandler(clientSocket,this.taskList));
-                clientThread.start();
-            }
-        }
-        catch (Exception e) {
+        try {
+            this.welcomeSocket = new ServerSocket(port);
+        } catch (IOException e ) {
             e.printStackTrace();
+        }
+    }
+
+    public void execute() {
+        while (true) {
+            try {
+                Socket clientSocket = welcomeSocket.accept();
+                TaskListCommunicationThreadHandler handler =
+                        new TaskListCommunicationThreadHandler(clientSocket,taskList);
+                handler.run();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
