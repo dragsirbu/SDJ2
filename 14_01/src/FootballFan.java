@@ -36,6 +36,7 @@ public class FootballFan implements Observer
             System.out.println("Boooo (the other team scored)");
         }
     }
+
     public void update(Observable o, Object obj) {
         this.reactOnGoal((boolean)obj);
     }

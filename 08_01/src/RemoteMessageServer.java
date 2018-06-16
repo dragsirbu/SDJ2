@@ -29,11 +29,10 @@ public class RemoteMessageServer implements RemoteMessageList {
 //        }
 
         try {
-            String name = "Messagelist";
             RemoteMessageList messageList = new RemoteMessageServer();
             RemoteMessageList stub = (RemoteMessageList) UnicastRemoteObject.exportObject(messageList,0);
             Registry registry = LocateRegistry.createRegistry(1099);
-            registry.rebind(name,stub);
+            registry.bind("Messagelist",stub);
             System.out.println("MessageListServer bound");
         } catch (Exception e) {
             e.printStackTrace();

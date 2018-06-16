@@ -1,6 +1,7 @@
 import java.util.Observable;
 import java.util.Observer;
 
+
 public class Scoreboard implements Observer
 {
     private FootballGame game;

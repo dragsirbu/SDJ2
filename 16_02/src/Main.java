@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         ThreadSafeList<String> list = new ThreadSafeList<String>(new ArrayList<>());
+        ThreadSafeList<Integer> listInteger = new ThreadSafeList<Integer>(new ArrayList<>());
         list.add("Dragos");
         list.add("Me");
         list.add("FGHJ");
