@@ -1,6 +1,6 @@
-package project.bussineslayer.model.interfaces;
-
-public interface ICustomer {
-
-    void withdrawMoney(double amount);
-}
+//package project.bussineslayer.model.interfaces;
+//
+//public interface ICustomer {
+//
+//    void withdrawMoney(double amount);
+//}

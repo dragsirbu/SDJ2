@@ -1,9 +1,9 @@
 package project.bussineslayer;
 
 import project.bussineslayer.model.Administrator;
-import project.bussineslayer.model.interfaces.IAdmin;
+import project.bussineslayer.model.interfaces.IAdminController;
 
-public class AdministratorController implements IAdmin {
+public class AdministratorController implements IAdminController {
 
     private Administrator admin;
 
@@ -12,8 +12,8 @@ public class AdministratorController implements IAdmin {
         this.admin = admin;
     }
 
-    @Override
-    public void CreateAccount(int number, double balance) {
-        admin.CreateAccount(number,balance);
-    }
+//    @Override
+//    public void CreateAccount(int number, double balance) {
+//        admin.CreateAccount(number,balance);
+//    }
 }

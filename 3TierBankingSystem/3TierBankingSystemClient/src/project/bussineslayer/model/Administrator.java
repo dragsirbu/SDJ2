@@ -1,12 +1,11 @@
 package project.bussineslayer.model;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Administrator {
+public class Administrator implements Serializable {
 
     private String username;
     private String password;
-    private ArrayList<Account> accounts;
 
     public Administrator(String username, String password) {
         this.username = username;
@@ -19,10 +18,6 @@ public class Administrator {
 
     public String getUsername() {
         return username;
-    }
-
-    public void CreateAccount(int number, double balance) {
-        accounts.add(new Account(number,balance));
     }
 
     public boolean equals(Object obj) {

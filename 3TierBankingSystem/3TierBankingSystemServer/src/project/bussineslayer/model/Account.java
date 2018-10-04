@@ -32,4 +32,13 @@ public class Account
     {
         balance += amount;
     }
+
+    public boolean equals(int number) {
+        return (this.number == number);
+    }
+
+    @Override
+    public String toString() {
+        return "Number: "+this.getNumber()+", Balance: "+this.getBalance();
+    }
 }

@@ -7,7 +7,6 @@ public class RmiTaskServer implements RemoteTaskList {
 
     private GenQueue<Task> queue;
     public RmiTaskServer() {
-        super();
         queue = new GenQueue<>();
         startRegistry();
         startServer();

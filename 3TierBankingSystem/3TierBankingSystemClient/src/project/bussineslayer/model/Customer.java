@@ -1,6 +1,8 @@
 package project.bussineslayer.model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Serializable {
 
     private String username;
     private String password;
@@ -25,9 +27,9 @@ public class Customer {
         return username;
     }
 
-    public void WithdrawMoney(double amount) {
-        account.updateBalance(-amount);
-    }
+//    public void withdrawMoney(double amount) {
+//        account.updateBalance(-amount);
+//    }
 
     public boolean equals(Object obj) {
         if (!(obj instanceof Customer))

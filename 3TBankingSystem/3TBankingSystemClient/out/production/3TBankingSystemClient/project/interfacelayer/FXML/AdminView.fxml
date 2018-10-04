@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.interfacelayer.FXMLControllers.AdminViewController">
+   <children>
+      <Button layoutX="213.0" layoutY="311.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="175.0" text="Create Account" />
+      <Label layoutX="97.0" layoutY="111.0" prefHeight="27.0" prefWidth="150.0" text="Account Number">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="97.0" layoutY="171.0" prefHeight="21.0" prefWidth="150.0" text="Balance">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField layoutX="295.0" layoutY="109.0" />
+      <TextField layoutX="295.0" layoutY="169.0" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="&lt;" onAction="#backButtonPressed"/>
+   </children>
+</AnchorPane>

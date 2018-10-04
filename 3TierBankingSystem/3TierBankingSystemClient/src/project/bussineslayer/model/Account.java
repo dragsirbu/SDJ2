@@ -2,9 +2,7 @@ package project.bussineslayer.model;
 
 import java.io.Serializable;
 
-public class Account
-        implements Serializable
-{
+public class Account implements Serializable{
     private int number;
     private double balance;
 
@@ -27,9 +25,17 @@ public class Account
         return balance;
     }
 
+    public boolean equals(int number) {
+        return (this.number == number);
+    }
 
     public void updateBalance( double amount )
     {
         balance += amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Number: "+this.getNumber()+", Balance: "+this.getBalance();
     }
 }

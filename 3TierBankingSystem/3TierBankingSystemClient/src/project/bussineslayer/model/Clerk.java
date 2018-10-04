@@ -1,6 +1,8 @@
 package project.bussineslayer.model;
 
-public class Clerk {
+import java.io.Serializable;
+
+public class Clerk implements Serializable {
 
     private String username;
     private String password;
