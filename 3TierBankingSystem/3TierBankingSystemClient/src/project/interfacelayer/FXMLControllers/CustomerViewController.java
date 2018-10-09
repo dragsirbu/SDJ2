@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import project.bussineslayer.ServerConnector;
 import project.bussineslayer.model.Account;
+import project.bussineslayer.model.Customer;
 import project.bussineslayer.model.interfaces.IBankController;
 
 import java.io.IOException;
@@ -28,6 +29,15 @@ public class CustomerViewController implements Initializable {
         this.bank = ServerConnector.getServerConnector().getBank();
     }
 
+    public void setCustomerController(Customer customer) {
+        try {
+            this.bank.setCustomerController(customer);
+        } catch (Exception e) {
+            System.out.println("Exception in setting customer controller!");
+            e.printStackTrace();
+        }
+    }
+
     public void backButtonPressed() throws IOException {
         Stage stage = (Stage) anchorPane.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../FXML/LogIn.fxml"))));
@@ -39,8 +49,7 @@ public class CustomerViewController implements Initializable {
         try {
             Account account = bank.getAccount(accountNumber);
             if (account != null) {
-                bank.withdrawMoney(account,amount);
-                System.out.println(amount+" withdrawn from Account "+account.getNumber());
+                bank.customerWithdrawMoney(amount);
             } else {
                 System.out.println("Account "+accountNumber+" not found!");
             }

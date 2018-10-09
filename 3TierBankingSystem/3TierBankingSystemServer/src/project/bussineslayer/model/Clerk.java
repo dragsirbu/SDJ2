@@ -27,12 +27,18 @@ public class Clerk implements Serializable {
         return ((clerk.getUsername().equals(this.username) && (clerk.getPassword().equals(this.password))));
     }
 
-    public void InsertMoney(Account account, double amount) {
+    public void insertMoney(Account account, double amount) {
         account.updateBalance(amount);
+        System.out.println(amount+"$ added to Account "+account.getNumber()+" by Clerk "+this.getUsername());
     }
 
-    public void WithdrawMoney(Account account, double amount) {
-        account.updateBalance(-amount);
+    public void withdrawMoney(Account account, double amount) {
+        if (account.getBalance() >= amount) {
+            account.updateBalance(-amount);
+            System.out.println(amount + "$ withdrawn from Account "+account.getNumber()+" by Clerk "+this.getUsername());
+        }
+        else
+            System.out.println("Insufficient funds on account "+account.getNumber());
     }
 
 }

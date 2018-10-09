@@ -13,15 +13,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="90.0" />
+      <TextField fx:id="accountNumberField" layoutX="300.0" layoutY="90.0" />
       <Label layoutX="104.0" layoutY="148.0" prefHeight="27.0" prefWidth="150.0" text="Amount">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="144.0" />
-      <Button layoutX="169.0" layoutY="305.0" mnemonicParsing="false" text="Insert" />
-      <Button layoutX="361.0" layoutY="305.0" mnemonicParsing="false" text="Withdraw" />
+      <TextField fx:id="amountField" layoutX="300.0" layoutY="144.0" />
+      <Button layoutX="169.0" layoutY="305.0" mnemonicParsing="false" text="Insert" onAction="#insertButtonPressed"/>
+      <Button layoutX="361.0" layoutY="305.0" mnemonicParsing="false" text="Withdraw" onAction="#withdrawButtonPressed"/>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonPressed" text="&lt;" />
    </children>
 </AnchorPane>

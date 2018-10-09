@@ -4,7 +4,10 @@ import project.bussineslayer.model.Account;
 import project.bussineslayer.model.Administrator;
 import project.bussineslayer.model.Clerk;
 import project.bussineslayer.model.Customer;
+import project.bussineslayer.model.interfaces.IAdminController;
 import project.bussineslayer.model.interfaces.IBankController;
+import project.bussineslayer.model.interfaces.IClerkController;
+import project.bussineslayer.model.interfaces.ICustomerController;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -15,6 +18,9 @@ public class BankController implements IBankController {
     private ArrayList<Clerk> clerks;
     private ArrayList<Customer> customers;
     private ArrayList<Account> accounts;
+    private AdministratorController administratorController;
+    private ClerkController clerkController;
+    private CustomerController customerController;
 
     public BankController() {
         this.admins = new ArrayList<>();
@@ -24,6 +30,26 @@ public class BankController implements IBankController {
         admins.add(new Administrator("admin","admin"));
         clerks.add(new Clerk("clerk","clerk"));
         customers.add(new Customer("customer","customer"));
+    }
+
+    @Override
+    public void setAdministratorController(Administrator administrator) throws RemoteException {
+        this.administratorController = new AdministratorController(administrator);
+    }
+
+    @Override
+    public void setClerkController(Clerk clerk) throws RemoteException {
+        this.clerkController = new ClerkController(clerk);
+    }
+
+    @Override
+    public void setCustomerController(Customer customer) throws RemoteException {
+        this.customerController = new CustomerController(customer);
+    }
+
+    @Override
+    public void setAccountList() throws RemoteException {
+        this.accounts = administratorController.getAccounts();
     }
 
     @Override
@@ -42,25 +68,46 @@ public class BankController implements IBankController {
     }
 
     @Override
-    public void createAccount(Account account) throws RemoteException {
-        accounts.add(account);
+    public void createAccount(int number, double balance) throws RemoteException {
+        Account account = new Account(number,balance);
+        administratorController.createAccount(number, balance);
         System.out.println("Account created: "+account.toString());
+        setAccountList();
+        getAllAcounts();
     }
 
     @Override
-    public void insertMoney(Account account,double amount) throws RemoteException {
-        account.updateBalance(amount);
-        System.out.println(amount+ "added to Account "+account.getNumber());
-    }
-
-    @Override
-    public void withdrawMoney(Account account,double amount) throws RemoteException {
-        if (account.getBalance() > amount) {
-            account.updateBalance(-amount);
-            System.out.println(amount+ "withdrawn from Account "+account.getNumber());
+    public void clerkInsertMoney(int number, double amount) throws RemoteException {
+        Account insertAccount = null;
+        setAccountList();
+        for (Account account : accounts) {
+            if (account.getNumber() == number)
+                insertAccount = account;
         }
+        if (insertAccount != null)
+            clerkController.insertMoney(insertAccount, amount);
         else
-            System.out.println("Not enough funds on account: "+account.getNumber());
+            System.out.println("Account " + number + " not found in the system!");
+    }
+
+
+    @Override
+    public void clerkWithdrawMoney(int number, double amount) throws RemoteException {
+        Account withdrawnAccount = null;
+        setAccountList();
+        for (Account account: accounts) {
+            if (account.getNumber() == number)
+                withdrawnAccount = account;
+        }
+        if (withdrawnAccount != null)
+            clerkController.withdrawMoney(withdrawnAccount,amount);
+        else
+            System.out.println("Account "+number+" not found in the system!");
+    }
+
+    @Override
+    public void customerWithdrawMoney(double amount) throws RemoteException {
+        customerController.withdrawMoney(amount);
     }
 
     @Override
@@ -100,5 +147,12 @@ public class BankController implements IBankController {
                 return account;
         }
         return null;
+    }
+
+    private void getAllAcounts() {
+        System.out.println("All acounts:");
+        for (Account account : accounts) {
+            System.out.println(account.toString());
+        }
     }
 }

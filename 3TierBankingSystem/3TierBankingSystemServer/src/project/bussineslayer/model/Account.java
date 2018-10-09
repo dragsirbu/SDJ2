@@ -9,6 +9,10 @@ public class Account
     private double balance;
 
 
+    public Account(int number) {
+        this.number = number;
+    }
+
     public Account( int number, double balance )
     {
         this.number = number;

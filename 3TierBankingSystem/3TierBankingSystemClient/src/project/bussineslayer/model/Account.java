@@ -2,10 +2,16 @@ package project.bussineslayer.model;
 
 import java.io.Serializable;
 
-public class Account implements Serializable{
+public class Account
+        implements Serializable
+{
     private int number;
     private double balance;
 
+
+    public Account(int number) {
+        this.number = number;
+    }
 
     public Account( int number, double balance )
     {
@@ -25,13 +31,14 @@ public class Account implements Serializable{
         return balance;
     }
 
-    public boolean equals(int number) {
-        return (this.number == number);
-    }
 
     public void updateBalance( double amount )
     {
         balance += amount;
+    }
+
+    public boolean equals(int number) {
+        return (this.number == number);
     }
 
     @Override

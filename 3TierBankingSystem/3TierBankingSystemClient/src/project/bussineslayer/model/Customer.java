@@ -19,6 +19,18 @@ public class Customer implements Serializable {
         this.account = account;
     }
 
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -27,9 +39,14 @@ public class Customer implements Serializable {
         return username;
     }
 
-//    public void withdrawMoney(double amount) {
-//        account.updateBalance(-amount);
-//    }
+    public void withdrawMoney(double amount) {
+        if (this.account.getBalance() >= amount) {
+            account.updateBalance(-amount);
+            System.out.println(amount+"$ withdrawn from Account "+this.account.getNumber()+" by Customer "+this.username);
+        }
+        else
+            System.out.println("Insufficient funds on account"+account.getNumber());
+    }
 
     public boolean equals(Object obj) {
         if (!(obj instanceof Customer))
